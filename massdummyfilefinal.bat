@@ -1,5 +1,3 @@
-@ECHO ON
-
 SET /A "Counter=0"
 IF "%~3" == "1" GOTO One
 IF "%~3" == "2" GOTO Two
@@ -38,7 +36,7 @@ IF "%Folder:~-1%"=="\" SET "Folder=%Folder:~0,-1%"
 IF "%Extension:~0,1%"=="." SET "Extension=%Extension:~1%"
 FOR /F "usebackq delims=" %%I IN ( `dir /b "%Folder%\*.%Extension%"` ) DO (
 COPY "%Folder%\%%I" "%Folder%\%%I.bak" >NUL
-IF EXIST "%Folder%\%%I" SET /A "Counter+=1"
+IF EXIST "%Folder%\%%I.bak" SET /A "Counter+=1"
 )
 IF %Counter% NEQ 0 (
 ECHO "%Counter% file(s) backed up."
