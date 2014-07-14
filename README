@@ -1,0 +1,41 @@
+Mass Dummy File Creator - BAT Edition
+by Expack3
+------------------------
+
+What is it?
+
+The Mass Dummy File Creator - BAT Edition is a Windows BAT-based console utiliy for replacing files with empty "dummy" files. The utility can optionally back up any replaced files, and can also restore any files which it backed up.
+
+Requirements:
+
+Windows XP or higher
+
+Operation Instructions:
+
+Use the following syntax:
+
+massdummyfilefinal Drive:Path Extension OperationType
+
+Valid OperationType values are 1 (create dummy files), 2 (backup files) or 3 (restore files).
+
+For example, to back up all files in D:\Program Files(x86)\War&Warlords with the extension .dat, you would input the following:
+
+massdummyfilefinal "D:\Program Files(x86)\War&Warlords" .dat 2
+
+Also, if you want to restore backups made using this utility, you do not need to include the extension. For example:
+
+massdummyfilefinal "D:\Program Files(x86)\War&Warlords" 3
+
+and 
+
+massdummyfilefinal "D:\Program Files(x86)\War&Warlords" .bik 3
+
+will do the exact same thing, with the latter ignoring the given extension.
+
+Known Issues:
+
+*If the file you back up contains multiple extensions, such as test.max.xm, backup will fail such that a new file called test.max will be created.
+
+Changelog:
+
+1.0 (Initial Version)
